@@ -4,8 +4,8 @@ import requests
 from fake_useragent import UserAgent
 
 
-root_url = 'https://hidemy.io'
-demo_url = root_url + '/ru/demo/'
+root_url = 'https://hmy.name'
+demo_url = root_url + '/demo/'
 ua = UserAgent()
 headers = {'User-Agent': ua.random}
 proxy = input('Введите прокси в формате `ip:port`. Оставьте поле пустым, чтобы не использовать прокси: ')
@@ -25,7 +25,7 @@ if 'Ваша электронная почта' in demo_page.text:
     
     email = input('Введите электронную почту для получения тестового периода: ')
 
-    response = requests.post('https://hidemy.io/ru/demo/success/', data={
+    response = requests.post('https://hmy.name/demo/success/', data={
         "demo_mail": f"{email}"
     }, headers=headers, proxies=proxies)
 
